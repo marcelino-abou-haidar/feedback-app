@@ -9,6 +9,7 @@ import FeedbackForm from './components/FeedbackForm'
 import AboutPage from './pages/AboutPage'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import AboutIconLink from './components/AboutIconLink'
+import { FeedbackProvider } from './context/FeedbackContext'
 
 const App = () => {
 	const [feedback, setFeedback] = useState(FeedbackData)
@@ -21,29 +22,31 @@ const App = () => {
 			setFeedback(feedback.filter((item) => id !== item.id))
 	}
 	return (
-		<Router>
-			<Header />
-			<div className='container'>
-				<Routes>
-					<Route
-						path='/'
-						exact
-						element={
-							<>
-								<FeedbackForm handleAdd={addFeedback} />
-								<FeedbackStats feedback={feedback} />
-								<FeedbackList
-									feedback={feedback}
-									handleDelete={deleteFeedback}
-								/>
-							</>
-						}
-					/>
-					<Route path='/about' element={<AboutPage />} />
-				</Routes>
-				<AboutIconLink />
-			</div>
-		</Router>
+		<FeedbackProvider>
+			<Router>
+				<Header />
+				<div className='container'>
+					<Routes>
+						<Route
+							path='/'
+							exact
+							element={
+								<>
+									<FeedbackForm handleAdd={addFeedback} />
+									<FeedbackStats feedback={feedback} />
+									<FeedbackList
+										feedback={feedback}
+										handleDelete={deleteFeedback}
+									/>
+								</>
+							}
+						/>
+						<Route path='/about' element={<AboutPage />} />
+					</Routes>
+					<AboutIconLink />
+				</div>
+			</Router>
+		</FeedbackProvider>
 	)
 }
 
