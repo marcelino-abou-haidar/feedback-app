@@ -1,16 +1,18 @@
 import { PropTypes } from 'prop-types'
-
+import { Link } from 'react-router-dom'
 const Header = ({ text, bgColor, color }) => {
 	const headerStyles = {
 		backgroundColor: bgColor,
 		color: color,
 	}
 	return (
-		<header style={headerStyles}>
-			<div className='container'>
-				<h2>{text}</h2>
-			</div>
-		</header>
+		<Link to='/'>
+			<header style={headerStyles}>
+				<div className='container'>
+					<h2>{text}</h2>
+				</div>
+			</header>
+		</Link>
 	)
 }
 
