@@ -6,13 +6,13 @@ const Header = ({ text, bgColor, color }) => {
 		color: color,
 	}
 	return (
-		<Link to='/'>
-			<header style={headerStyles}>
-				<div className='container'>
+		<header style={headerStyles}>
+			<div className='container'>
+				<Link to='/'>
 					<h2>{text}</h2>
-				</div>
-			</header>
-		</Link>
+				</Link>
+			</div>
+		</header>
 	)
 }
 
