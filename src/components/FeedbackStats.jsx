@@ -4,7 +4,7 @@ const FeedbackStats = () => {
 	const { feedback } = useContext(FeedbackContext)
 	let average =
 		feedback.reduce((accumulator, current) => {
-			return accumulator + current.rating
+			return accumulator + +current.rating
 		}, 0) / feedback.length
 
 	average = average.toFixed(1).replace(/[.,]0$/, '')
