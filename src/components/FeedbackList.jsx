@@ -4,10 +4,12 @@ import { useContext } from 'react'
 import FeedbackContext from '../context/FeedbackContext'
 
 const FeedbackList = () => {
-	const { feedback } = useContext(FeedbackContext)
+	const { feedback, isLoading } = useContext(FeedbackContext)
 	if (!feedback || feedback.length === 0) {
 		return <p>No feedbacks yet</p>
 	}
+
+	if (isLoading) return <h4>Loading..</h4>
 
 	return (
 		<div className='feedback-list'>
