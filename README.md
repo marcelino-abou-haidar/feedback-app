@@ -4,6 +4,8 @@ This project was done following the *React Front to Back 2022* tutorial of *Brad
 
 Brad was kind enough to provide me with access to this [Udemy tutorial](https://www.udemy.com/course/react-front-to-back-2022) for free.
 
+![project-screenshot](https://raw.githubusercontent.com/marcelino-abou-haidar/feedback-app/main/public/images/project-screenshot.png)
+
 ## What You Will Learn Following This Tutorial
 
 1. What React is, who created React library, and why it is used.
